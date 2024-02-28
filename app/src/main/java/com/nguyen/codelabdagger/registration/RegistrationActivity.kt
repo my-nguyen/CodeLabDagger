@@ -8,16 +8,16 @@ import com.nguyen.codelabdagger.R
 import com.nguyen.codelabdagger.main.MainActivity
 import com.nguyen.codelabdagger.registration.enterdetails.EnterDetailsFragment
 import com.nguyen.codelabdagger.registration.termsandconditions.TermsAndConditionsFragment
+import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
 
-    lateinit var registrationViewModel: RegistrationViewModel
+    @Inject lateinit var registrationViewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        registrationViewModel = RegistrationViewModel((application as MyApplication).userManager)
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_holder, EnterDetailsFragment())
             .commit()
