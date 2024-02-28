@@ -1,9 +1,16 @@
 package com.nguyen.codelabdagger.di
 
+import android.content.Context
 import com.nguyen.codelabdagger.registration.RegistrationActivity
+import dagger.BindsInstance
 import dagger.Component
 
-@Component
+@Component(modules = [StorageModule::class])
 interface AppComponent {
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance context: Context): AppComponent
+    }
+
     fun inject(activity: RegistrationActivity)
 }
