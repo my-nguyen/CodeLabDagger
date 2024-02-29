@@ -1,5 +1,6 @@
 package com.nguyen.codelabdagger.registration
 
+import com.nguyen.codelabdagger.di.ActivityScope
 import com.nguyen.codelabdagger.user.UserManager
 import javax.inject.Inject
 
@@ -7,6 +8,7 @@ import javax.inject.Inject
  * RegistrationViewModel is the ViewModel that the Registration flow ([RegistrationActivity]
  * and fragments) uses to keep user's input data.
  */
+@ActivityScope
 class RegistrationViewModel @Inject constructor(val userManager: UserManager) {
 
     private var username: String? = null
