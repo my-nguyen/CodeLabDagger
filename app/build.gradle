@@ -15,7 +15,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.nguyen.codelabdagger.MyCustomTestRunner"
     }
 
     buildTypes {
@@ -45,4 +46,7 @@ dependencies {
 
     implementation "com.google.dagger:dagger:2.50"
     kapt "com.google.dagger:dagger-compiler:2.50"
+    testImplementation 'org.mockito:mockito-core:3.4.6'
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+    testImplementation 'androidx.test:runner:1.1.0'
 }
