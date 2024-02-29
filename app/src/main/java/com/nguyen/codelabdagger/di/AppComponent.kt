@@ -2,8 +2,8 @@ package com.nguyen.codelabdagger.di
 
 import android.content.Context
 import com.nguyen.codelabdagger.login.LoginComponent
-import com.nguyen.codelabdagger.main.MainActivity
 import com.nguyen.codelabdagger.registration.RegistrationComponent
+import com.nguyen.codelabdagger.user.UserManager
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -18,6 +18,5 @@ interface AppComponent {
 
     fun registrationComponent(): RegistrationComponent.Factory
     fun loginComponent(): LoginComponent.Factory
-
-    fun inject(activity: MainActivity)
+    fun userManager(): UserManager
 }
